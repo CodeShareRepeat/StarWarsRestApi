@@ -1,19 +1,27 @@
 interface character {
   name: string;
-  race: string;
+  type: typeOfCharacter;
+}
+
+enum typeOfCharacter {
+  human = "human",
+  jedi = "jedi",
+  sith = "sith lord",
+  droid = "droid",
+  stormtrooper = "Storm trooper",
 }
 
 export let characterList: character[] = [
   {
-    name: "Test1",
-    race: "test",
+    name: "Anakin Skywalker",
+    type: typeOfCharacter.human,
   },
   {
-    name: "Test 2",
-    race: "test",
+    name: "BB-8",
+    type: typeOfCharacter.droid,
   },
   {
-    name: "Test 3",
-    race: "human",
+    name: "C-3PO",
+    type: typeOfCharacter.droid,
   },
 ];

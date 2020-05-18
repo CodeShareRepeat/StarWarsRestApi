@@ -1,17 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.characterList = void 0;
+var typeOfCharacter;
+(function (typeOfCharacter) {
+    typeOfCharacter["human"] = "human";
+    typeOfCharacter["jedi"] = "jedi";
+    typeOfCharacter["sith"] = "sith lord";
+    typeOfCharacter["droid"] = "droid";
+    typeOfCharacter["stormtrooper"] = "Storm trooper";
+})(typeOfCharacter || (typeOfCharacter = {}));
 exports.characterList = [
     {
-        name: "Test1",
-        race: "test",
+        name: "Anakin Skywalker",
+        type: typeOfCharacter.human,
     },
     {
-        name: "Test 2",
-        race: "test",
+        name: "BB-8",
+        type: typeOfCharacter.droid,
     },
     {
-        name: "Test 3",
-        race: "human",
+        name: "C-3PO",
+        type: typeOfCharacter.droid,
     },
 ];
