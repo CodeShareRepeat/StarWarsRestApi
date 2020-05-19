@@ -1,10 +1,17 @@
 # StarWarsRestApi
 
-This REST api lists Star Wars characters and some additional information.
+This REST api lists Star Wars characters and some additional information in JSON.
 
-u can use it for testing.
+## Start the service localy
 
-## Method GetAllCharacters
+You can use:
+`yarn serve`
+or
+`npm run serve`
+
+## Method: AllCharacters
+
+Url: xyz:1234/AllCharacters
 
 This method returns you a list of character JSON objects.
 `{ name: "name of character", race: "race of character" }`
@@ -19,7 +26,7 @@ This method returns you a list of character JSON objects.
 
 `npm install express @types/express`
 
-the build output directory in the tsconfig.json should be "build"
+The build output directory in the tsconfig.json should be "./build"
 
-update the project.json with the following values
-`"scripts": { "serve": "tsc && node build/server.js", "tsc": "tsc",`
+Update the project.json with the following values
+`"scripts": { "serve": "tsc && node build/server.js", "tsc": "tsc", ...`
