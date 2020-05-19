@@ -16,7 +16,7 @@ Url: xyz:1234/AllCharacters
 This method returns you a list of character JSON objects.
 `{ name: "name of character", race: "race of character" }`
 
-## project setup
+## Project setup
 
 `npm init`
 
