@@ -12,8 +12,11 @@ This method returns you a list of character JSON objects.
 ## project setup
 
 `npm init`
+
 `npm install typescript`
+
 `npx tsc --init`
+
 `npm install express @types/express`
 
 the build output directory in the tsconfig.json should be "build"
