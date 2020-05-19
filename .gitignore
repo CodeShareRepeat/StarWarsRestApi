@@ -1,0 +1,4 @@
+node_modules/
+build/
+build/characterList.js
+build/server.js

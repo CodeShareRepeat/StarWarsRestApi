@@ -1,7 +1,7 @@
 interface character {
   name: string;
   class: characterClass;
-  species?: species;
+  species: species;
   homeworld: world;
   aliance: aliance;
 }
@@ -31,7 +31,7 @@ enum aliance {
 }
 
 enum world {
-  unkown,
+  unkown = "unkown",
   tatooine = "Tatooine",
   kashyyyk = " Kashyyyk",
   jakku = "Jakku",
