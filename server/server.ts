@@ -1,13 +1,24 @@
 import express = require("express");
+var cors = require("cors");
 import { characterList } from "./characterList";
 
 // Create a new express app instance
 const app: express.Application = express();
-app.get("/AllCharacters", async (req, res) => {
+
+app.use(cors());
+
+// var corsOptions = {
+//   origin: "*",
+//   optionsSuccessStatus: 200,
+// };
+
+const port: number = 4000;
+
+app.get("/all", async (req, res) => {
   res.send(JSON.stringify(characterList));
 });
 
-app.get("/CharactersByName", async (req, res) => {
+app.get("/byname", async (req, res) => {
   // map the resulting items
   var queryParameter = req.query;
   const resultsFound = characterList.map(
@@ -16,6 +27,6 @@ app.get("/CharactersByName", async (req, res) => {
   res.send(queryParameter);
 });
 
-app.listen(3000, function () {
-  console.log("App is listening on port 3000!");
+app.listen(port, function () {
+  console.log("App is listening on port " + port + "!");
 });
