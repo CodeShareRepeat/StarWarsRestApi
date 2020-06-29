@@ -4,7 +4,7 @@
   "description": "This REST api lists Star Wars characters and some additional information.",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node build/server.js",
+    "start": "nodemon ./build/server.js",
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +23,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "typescript": "^3.9.2"
-  }
+  },
+  "devDependencies": {}
 }

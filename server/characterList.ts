@@ -12,7 +12,7 @@ enum species {
   humanoid = "homanoid",
   human = "human",
   none = "none",
-  unknown = "unknown"
+  unknown = "unknown",
 }
 
 enum characterClass {
@@ -43,7 +43,7 @@ enum world {
   stewjon = "Stewjon",
   naboo = "Naboo",
   yavin4 = "Yavin IV",
-  coruscant = "Coruscant"
+  coruscant = "Coruscant",
 }
 
 export let characterList: character[] = [
@@ -57,14 +57,14 @@ export let characterList: character[] = [
   {
     name: "BB-8",
     class: characterClass.droid,
-    species : species.none,
+    species: species.none,
     homeworld: world.unkown,
     aliance: aliance.rebbel,
   },
   {
     name: "C-3PO",
     class: characterClass.droid,
-    species : species.none,
+    species: species.none,
     homeworld: world.tatooine,
     aliance: aliance.rebbel,
   },
@@ -101,69 +101,69 @@ export let characterList: character[] = [
     class: characterClass.jedi,
     species: species.human,
     homeworld: world.polismassa,
-    aliance: aliance.rebbel
+    aliance: aliance.rebbel,
   },
   {
     name: "Luke Skywalker",
     class: characterClass.jedi,
     species: species.human,
     homeworld: world.polismassa,
-    aliance: aliance.rebbel
+    aliance: aliance.rebbel,
   },
   {
     name: "Mace Windu",
     class: characterClass.jedi,
     species: species.human,
     homeworld: world.haruunkal,
-    aliance: aliance.republic
+    aliance: aliance.republic,
   },
   {
     name: "Obi-Wan Kenobi",
     class: characterClass.jedi,
     species: species.human,
     homeworld: world.stewjon,
-    aliance: aliance.rebbel
+    aliance: aliance.rebbel,
   },
   {
     name: "Padmé Amidala",
     class: characterClass.none,
     species: species.human,
     homeworld: world.naboo,
-    aliance: aliance.rebbel
+    aliance: aliance.rebbel,
   },
   {
     name: "Poe Dameron",
     class: characterClass.none,
     species: species.human,
     homeworld: world.yavin4,
-    aliance: aliance.rebbel
+    aliance: aliance.rebbel,
   },
   {
     name: "Qui-Gon Jinn",
     class: characterClass.jedi,
     species: species.human,
     homeworld: world.coruscant,
-    aliance: aliance.rebbel
+    aliance: aliance.rebbel,
   },
   {
     name: "R2-D2",
     class: characterClass.droid,
     species: species.none,
     homeworld: world.unkown,
-    aliance: aliance.rebbel
+    aliance: aliance.rebbel,
   },
   {
     name: "Rey Skywalker",
     class: characterClass.jedi,
     species: species.human,
     homeworld: world.jakku,
-    aliance: aliance.rebbel
+    aliance: aliance.rebbel,
   },
   {
     name: "Yoda",
     class: characterClass.jedi,
     species: species.unknown,
     homeworld: world.unkown,
-    aliance: aliance.rebbel
+    aliance: aliance.rebbel,
   },
 ];

@@ -2,19 +2,18 @@ import express = require("express");
 var cors = require("cors");
 import { characterList } from "./characterList";
 
+const port: number = 4000;
 // Create a new express app instance
 const app: express.Application = express();
+// app.use(cors());
+var corsOptions = {
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200,
+  methods: ["POST", "GET"],
+};
+//sddsrsfdsfdsfsd
 
-app.use(cors());
-
-// var corsOptions = {
-//   origin: "*",
-//   optionsSuccessStatus: 200,
-// };
-
-const port: number = 4000;
-
-app.get("/all", async (req, res) => {
+app.get("/all", cors(corsOptions), async (req, res) => {
   res.send(JSON.stringify(characterList));
 });
 
