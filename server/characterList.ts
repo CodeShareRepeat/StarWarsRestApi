@@ -1,4 +1,4 @@
-interface character {
+export interface character {
   name: string;
   class: characterClass;
   species: species;

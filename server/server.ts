@@ -1,29 +1,52 @@
 import express = require("express");
+import { characterList, character } from "./characterList";
 var cors = require("cors");
-import { characterList } from "./characterList";
 
 const port: number = 4000;
-// Create a new express app instance
 const app: express.Application = express();
-// app.use(cors());
-var corsOptions = {
-  origin: "http://localhost:3000",
-  optionsSuccessStatus: 200,
-  methods: ["POST", "GET"],
-};
-//sddsrsfdsfdsfsd
 
-app.get("/all", cors(corsOptions), async (req, res) => {
-  res.send(JSON.stringify(characterList));
+var corsOptions = {
+  origin: "*",
+  optionsSuccessStatus: 200,
+  methods: ["GET", "POST"],
+};
+
+app.get("/search", cors(corsOptions), async (req, res) => {
+  const searchString: string = req.query.searchstring as string;
+
+  if (searchString === "*") {
+    res.send(JSON.stringify(characterList));
+  } else {
+    let resultsFound: character[] = [];
+
+    characterList.forEach((item) => {
+      if (
+        item.name.toLowerCase().includes(searchString.toLowerCase()) ||
+        item.aliance.toLowerCase().includes(searchString.toLowerCase()) ||
+        item.homeworld.toLowerCase().includes(searchString.toLowerCase()) ||
+        item.class.toLowerCase().includes(searchString.toLowerCase()) ||
+        item.species.toLowerCase().includes(searchString.toLowerCase())
+      ) {
+        resultsFound.push(item);
+      }
+    });
+
+    res.send(resultsFound);
+  }
 });
 
-app.get("/byname", async (req, res) => {
-  // map the resulting items
-  var queryParameter = req.query;
-  const resultsFound = characterList.map(
-    (item) => item.name == "Luke Skywalker"
-  );
-  res.send(queryParameter);
+app.options("*");
+app.delete("/remove", cors(corsOptions), async (req, res) => {
+  const searchString: string = req.query.searchstring as string;
+
+  characterList.forEach((item) => {
+    if (item.name.toLowerCase().includes(searchString.toLowerCase())) {
+      characterList.indexOf(item);
+      characterList.splice(characterList.indexOf(item), 1);
+    }
+  });
+
+  res.send(characterList);
 });
 
 app.listen(port, function () {
