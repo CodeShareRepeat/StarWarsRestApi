@@ -6,7 +6,7 @@ const port: number = 4000;
 const app: express.Application = express();
 
 var corsOptions = {
-  origin: "*",
+  origin: "http://localhost:3000",
   optionsSuccessStatus: 200,
   methods: ["GET", "POST"],
 };
